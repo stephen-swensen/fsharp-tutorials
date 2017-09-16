@@ -21,13 +21,13 @@ this is necessary for all secondary files (the module name doesn't matter). It's
 We can evaluate `app.fsx` within `fsharpi` with `fsharpi --load:app.fsx`. That's great for development, but at the end of the day we want an executable that we can distribute or deploy. We can do that using `fsharpc`:
 
 ```
-fsharpc app.fsx
+fsharpc -o bin/app.exe app.fsx
 ```
 
 that will produce an executable: `app.exe` which we can run with `mono`:
 
 ```
-mono app.exe
+mono bin/app.exe
 ```
 
 Thus we can go directly from interactively developed .fsx scripts to executables!
