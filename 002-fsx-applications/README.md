@@ -18,7 +18,7 @@ module Project
 
 this is necessary for all secondary files (the module name doesn't matter). It's a quirk of the way `fsharpi` loads scripts (without it, modules defined within secondary files will not be visible).
 
-We can evaluate `app.fsx` within `fsharpi` with `fsharpi --load:app.fsx`. That's great for development, but at the end of the day we want an executable that we can distribute or deploy. We can do that using `fsharpc`:
+We can run `app.fsx` with `fsharpi` using `fsharpi app.fsx`. That's great for development, but at the end of the day we want an executable that we can distribute or deploy. We can do that using `fsharpc`:
 
 ```
 fsharpc -o bin/app.exe app.fsx
