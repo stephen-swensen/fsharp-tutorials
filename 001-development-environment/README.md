@@ -10,7 +10,7 @@ docker run -it -v $(pwd):/src swensen/dfvim:4.1.25
 
 This starts the container in interactive terminal mode with _the current host directory mounted inside the container_. That is, the files you edit inside the container are actually the files in the host directory from which you started the container.
 
-Since we will use this container frequently, we can define a alias function in our `.bashrc` or `.bash_profile` like
+Since we will use this container frequently, we can define an alias function in our `.bashrc` or `.bash_profile` like
 
 ```
 dfvim () { docker run -it -v $(pwd):/src swensen/dfvim:4.1.25; }
@@ -18,7 +18,7 @@ dfvim () { docker run -it -v $(pwd):/src swensen/dfvim:4.1.25; }
 
 and then use it like `dfvim`.
 
-Now, let's edit a .fsx file (.fsx files are F# script files, which can be run from the F# interactive). First, start `dfvim` within the directory containing this readme. Next, we can open the `test1.fsx` in vim:
+Now, let's edit an .fsx file (.fsx files are F# script files, which can be run from the F# interactive). First, start `dfvim` within the directory containing this README. Next, we can open the `test1.fsx` in vim:
 
 ```
 vim test1.fsx
