@@ -28,7 +28,7 @@ This file should be committed to source control. Note: we use `framework = net47
 
 Next we'll run `mono ./paket/paket.exe install --generate-load-scripts` to
 
-- generate paket.lock file (should be committed)
+- generate `paket.lock` file (should be committed)
 - download Suave package into `packages` folder (should _not_ be committed)
 - generate .fsx load scripts under `.paket/load` (should be committed)
 
@@ -40,7 +40,7 @@ Now we are done with paket, but we need to show how to reference our Suave depen
 #load ".paket/load/main.group.fsx"
 ```
 
-and then we should `#load refs.fsx` at the top of all of our .fsx files generally. While we could `#load` the `.paket/load/main.group.fsx` directly, using `refs.fsx` gives us oppourtunity to load additional non-paket managed dependencies in a consolidated place.
+and then we should `#load "refs.fsx"` at the top of all of our .fsx files generally. While we could `#load` the `.paket/load/main.group.fsx` directly, using `refs.fsx` gives us oppourtunity to load additional non-paket managed dependencies in a consolidated place.
 
 Finally, putting it all together, we have `app.fsx` as an example Suave webserver app:
 
@@ -55,4 +55,4 @@ let config = { defaultConfig with bindings = [publicBinding]; maxOps=1000 }
 startWebServer config (Successful.OK "Hello World!");;
 ```
 
-Note well: if you start `dfvim` with `docker run -it -v $(pwd):/src -p 8080:8080 dfvim` the the `-p 8080:8080` will bind host port 8080 to container port 8080, thus allowing us to confirm our web app is running from the host with a request like `curl localhost:8080`.
+Note well: if you start `dfvim` with `docker run -it -v $(pwd):/src -p 8080:8080 dfvim` then the `-p 8080:8080` argument will bind host port 8080 to container port 8080, thus allowing us to confirm our web app is running from the host with a request like `curl localhost:8080`.
