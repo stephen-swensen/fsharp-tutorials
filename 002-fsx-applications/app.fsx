@@ -1,3 +1,3 @@
 #load "utils.fsx"
 
-printfn "%A" (typeof<SomeType>.FullName);;
+printfn "%i" (Utils.add 1 2);;
