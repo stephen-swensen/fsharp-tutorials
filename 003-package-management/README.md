@@ -37,8 +37,22 @@ Note well: since we do not commit the binaries downloaded in the `packages` fold
 Now we are done with paket, but we need to show how to reference our Suave dependency. We'll create a `refs.fsx` file like so:
 
 ```
-#load .paket/load/main.group.fsx
+#load ".paket/load/main.group.fsx"
 ```
 
-and then we should `#load refs.fsx` at the top of all of our .fsx files generally (e.g. utils.fsx and app.fsx). While we could `#load` the `.paket/load/main.group.fsx` directly, using `refs.fsx` gives us oppourtunity to load additional non-paket managed dependencies in a consolodated place.
+and then we should `#load refs.fsx` at the top of all of our .fsx files generally. While we could `#load` the `.paket/load/main.group.fsx` directly, using `refs.fsx` gives us oppourtunity to load additional non-paket managed dependencies in a consolidated place.
 
+Finally, putting it all together, we have `app.fsx` as an example Suave webserver app:
+
+
+```
+#load "refs.fsx"
+
+open Suave
+
+let publicBinding = Suave.Http.HttpBinding.createSimple HTTP "0.0.0.0" 8080
+let config = { defaultConfig with bindings = [publicBinding]; maxOps=1000 }
+startWebServer config (Successful.OK "Hello World!");;
+```
+
+Note well: if you start `dfvim` with `docker run -it -v $(pwd):/src -p 8080:8080 dfvim` the the `-p 8080:8080` will bind host port 8080 to container port 8080, thus allowing us to confirm our web app is running from the host with a request like `curl localhost:8080`.
