@@ -1,0 +1,6 @@
+RESTRICTION: == net47
+NUGET
+  remote: https://www.nuget.org/api/v2
+    FSharp.Core (4.2.3)
+    Suave (2.2.1)
+      FSharp.Core (>= 4.0.0.1)

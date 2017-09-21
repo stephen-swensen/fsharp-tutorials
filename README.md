@@ -10,5 +10,7 @@ Some topics covered in this tutorial
 - Using fsharpi, fsharpc, and mono
 - Creating executable applications from multi-file .fsx scripts
 - Using Paket to manage NuGet dependencies
-- Using Suave to create RESTful web apis
+- Using Suave to create web services
 - Using Docker to create deployable web applications
+
+Sections are organized under folders in this repository, building progressively starting with `001-development-environment`. Each folder has its own README and all source files referenced in the content.
