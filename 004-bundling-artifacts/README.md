@@ -1,4 +1,4 @@
-# package-management
+# bundling-artifacts
 
 Following through on the previous section, here we show how to bundle binary artifacts for deploying web service applications using docker. The isolation provided by docker gives us the flexibility to deploy F# web services on any number of cloud providers that support docker such as AWS.
 
