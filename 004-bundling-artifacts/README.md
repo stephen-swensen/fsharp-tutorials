@@ -57,6 +57,6 @@ docker build -t example-app .
 docker run --name example-app -it -p 8080:8080 example-app
 ```
 
-Deploying the image and running the container is very much a cloud provider specific afair. [aws-docker-deploy](https://github.com/relayfoods/aws-docker-deploy) project shows how to do it on AWs.
+Deploying the image and running the container is very much a cloud provider specific afair. [aws-docker-deploy](https://github.com/relayfoods/aws-docker-deploy) project shows how to do it on AWS.
 
 That's it!
