@@ -26,7 +26,7 @@ nuget Suave
 
 This file should be committed to source control. Note: we use `framework = net47` to avoid downloading framework binaries we don't need.
 
-Next we'll run `mono ./paket/paket.exe install --generate-load-scripts` to
+Next we'll run `mono .paket/paket.exe install --generate-load-scripts` to
 
 - generate `paket.lock` file (should be committed)
 - download Suave package into `packages` folder (should _not_ be committed)
